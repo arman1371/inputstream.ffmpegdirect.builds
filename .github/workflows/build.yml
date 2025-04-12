@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: jirutka/setup-alpine@v1
         with:
-          arch: armv7
+          arch: armhf
 
       - run: cat /etc/alpine-release
         shell: alpine.sh {0}
