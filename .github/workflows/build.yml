@@ -18,6 +18,7 @@ jobs:
           packages: >
             build-base
             cmake
+            git
       
       - uses: actions/checkout@v4
         with:
