@@ -12,6 +12,8 @@ jobs:
       - uses: jirutka/setup-alpine@v1
         with:
           arch: armhf
+          packages: >
+            build-base
 
       - run: cat /etc/alpine-release
         shell: alpine.sh {0}
@@ -19,5 +21,5 @@ jobs:
       - run: uname -a
         shell: alpine.sh {0}
       
-      - run: uname -p
+      - run: uname -m
         shell: alpine.sh {0}
