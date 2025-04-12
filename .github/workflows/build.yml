@@ -19,6 +19,7 @@ jobs:
             build-base
             cmake
             git
+            autoconf
             automake
       
       - uses: actions/checkout@v4
