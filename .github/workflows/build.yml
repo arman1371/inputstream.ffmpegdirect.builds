@@ -23,7 +23,7 @@ jobs:
             automake
       
       - name: install versioned packages
-        shell: alpine.sh {0}
+        shell: alpine.sh --root {0}
         run: |
           apk add gettext=0.21.1
       
