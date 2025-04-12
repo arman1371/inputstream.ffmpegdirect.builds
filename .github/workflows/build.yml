@@ -5,6 +5,9 @@ on:
       - main
   workflow_dispatch:
 
+env:
+  PACKAGE_NAME: 'inputstream.ffmpegdirect'
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,12 +17,29 @@ jobs:
           arch: armhf
           packages: >
             build-base
-
-      - run: cat /etc/alpine-release
-        shell: alpine.sh {0}
-
-      - run: uname -a
-        shell: alpine.sh {0}
       
-      - run: uname -m
+      - uses: actions/checkout@v4
+        with:
+          repository: 'https://github.com/xbmc/xbmc.git'
+          ref: '21.0-Omega'
+
+      - uses: actions/checkout@v4
+        with:
+          repository: 'https://github.com/xbmc/inputstream.ffmpegdirect.git'
+          ref: '21.3.7-Omega'
+
+      - name: Create build directory
+        run: |
+          mkdir ${{env.PACKAGE_NAME}}/build
+      
+      - name: cmake
+        working-directory: ${{env.PACKAGE_NAME}}/build
         shell: alpine.sh {0}
+        run: |
+          cmake -DADDONS_TO_BUILD=${{env.PACKAGE_NAME}} -DADDON_SRC_PREFIX=../.. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=../../xbmc/build/addons -DPACKAGE_ZIP=1 ../../xbmc/cmake/addons
+
+      - name: make
+        working-directory: ${{env.PACKAGE_NAME}}/build
+        shell: alpine.sh {0}
+        run: |
+          make -j$(nproc)
