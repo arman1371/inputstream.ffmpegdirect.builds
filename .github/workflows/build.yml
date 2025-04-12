@@ -23,6 +23,7 @@ jobs:
             autoconf
             automake
             gettext
+            pkgconf
       
       - uses: actions/checkout@v4
         with:
