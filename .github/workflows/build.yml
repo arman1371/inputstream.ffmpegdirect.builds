@@ -23,11 +23,13 @@ jobs:
         with:
           repository: 'xbmc/xbmc'
           ref: '21.0-Omega'
+          path: xbmc
 
       - uses: actions/checkout@v4
         with:
           repository: 'xbmc/${{env.PACKAGE_NAME}}'
           ref: '21.3.7-Omega'
+          path: ${{env.PACKAGE_NAME}}
 
       - name: Create build directory
         run: |
