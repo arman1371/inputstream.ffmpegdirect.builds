@@ -21,12 +21,7 @@ jobs:
       - name: install versioned packages
         shell: alpine.sh --root {0}
         run: |
-          apk add 
-            cmake \
-            git \
-            autoconf \
-            automake \
-            gettext=0.21.1
+          apk add cmake git autoconf automake gettext=0.21.1
       
       - uses: actions/checkout@v4
         with:
