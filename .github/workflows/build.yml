@@ -15,13 +15,14 @@ jobs:
       - uses: jirutka/setup-alpine@v1
         with:
           arch: armhf
+          branch: v3.18
           packages: >
             build-base
-      
-      - name: install versioned packages
-        shell: alpine.sh --root {0}
-        run: |
-          apk add cmake git autoconf automake gettext=0.21.1
+            cmake
+            git
+            autoconf
+            automake
+            gettext
       
       - uses: actions/checkout@v4
         with:
