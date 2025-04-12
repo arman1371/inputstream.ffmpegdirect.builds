@@ -25,7 +25,7 @@ jobs:
 
       - uses: actions/checkout@v4
         with:
-          repository: 'inputstream.ffmpegdirect'
+          repository: 'xbmc/inputstream.ffmpegdirect'
           ref: '21.3.7-Omega'
 
       - name: Create build directory
