@@ -20,12 +20,12 @@ jobs:
       
       - uses: actions/checkout@v4
         with:
-          repository: 'https://github.com/xbmc/xbmc.git'
+          repository: 'xbmc/xbmc'
           ref: '21.0-Omega'
 
       - uses: actions/checkout@v4
         with:
-          repository: 'https://github.com/xbmc/inputstream.ffmpegdirect.git'
+          repository: 'inputstream.ffmpegdirect'
           ref: '21.3.7-Omega'
 
       - name: Create build directory
