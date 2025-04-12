@@ -21,7 +21,7 @@ jobs:
             git
             autoconf
             automake
-            gettext
+            gettext=0.21.1
       
       - uses: actions/checkout@v4
         with:
