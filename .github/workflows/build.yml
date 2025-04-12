@@ -15,7 +15,7 @@ jobs:
       - uses: jirutka/setup-alpine@v1
         with:
           arch: armhf
-          branch: v3.18
+          branch: v3.16
           packages: >
             build-base
             cmake
