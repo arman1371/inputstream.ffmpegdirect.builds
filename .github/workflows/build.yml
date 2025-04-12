@@ -17,6 +17,7 @@ jobs:
           arch: armhf
           packages: >
             build-base
+            cmake
       
       - uses: actions/checkout@v4
         with:
