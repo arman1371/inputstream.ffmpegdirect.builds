@@ -15,15 +15,14 @@ jobs:
       - uses: jirutka/setup-alpine@v1
         with:
           arch: armhf
-          branch: v3.16
+          branch: v3.21
           packages: >
             build-base
             cmake
             git
             autoconf
             automake
-            gettext
-            pkgconf
+            gettext-dev
       
       - uses: actions/checkout@v4
         with:
