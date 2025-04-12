@@ -47,6 +47,17 @@ jobs:
           cd ${{env.PACKAGE_NAME}}/build
           cmake -DADDONS_TO_BUILD=${{env.PACKAGE_NAME}} -DADDON_SRC_PREFIX=../.. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=../../xbmc/build/addons -DPACKAGE_ZIP=1 ../../xbmc/cmake/addons
 
+      - run: |
+          cd ${{env.PACKAGE_NAME}}
+          ls -al build
+          ls -al build/build
+          ls -al build/build/libzvbi
+          ls -al build/build/libzvbi/src
+          ls -al build/build/libzvbi/src/libzvbi
+          ls -al build/build/libzvbi/src/libzvbi/src
+          ls -al build/build/libzvbi/src/libzvbi/src/io-sim.c
+          cat build/build/libzvbi/src/libzvbi/src/io-sim.c
+      
       - name: make
         shell: alpine.sh {0}
         run: |
