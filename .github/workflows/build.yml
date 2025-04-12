@@ -34,15 +34,6 @@ jobs:
       - name: Create build directory
         run: |
           mkdir ${{env.PACKAGE_NAME}}/build
-
-      - name: debug
-        shell: alpine.sh {0}
-        run: |
-          pwd
-          ls -al .
-          ls -al ..
-          ls -al inputstream.ffmpegdirect
-          ls -al xbmc
       
       - name: cmake
         shell: alpine.sh {0}
