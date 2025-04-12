@@ -1,0 +1,17 @@
+name: Build inputstream.ffmpegdirect
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: jirutka/setup-alpine@v1
+        with:
+          arch: armv7
+
+      - run: cat /etc/alpine-release
+        shell: alpine.sh {0}
