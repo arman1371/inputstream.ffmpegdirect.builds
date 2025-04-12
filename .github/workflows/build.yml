@@ -23,6 +23,7 @@ jobs:
             autoconf
             automake
             gettext-dev
+            libtool
       
       - uses: actions/checkout@v4
         with:
