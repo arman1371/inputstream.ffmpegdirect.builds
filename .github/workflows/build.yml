@@ -45,6 +45,11 @@ jobs:
           ref: '21.3.7-Omega'
           path: ${{env.PACKAGE_NAME}}
 
+      - name: Fix gmp download url
+        run: |
+          sed -i 's#https://gmplib.org/download/gmp/#https://ftp.gnu.org/gnu/gmp/#g' ${{env.PACKAGE_NAME}}/depends/common/gmp/gmp.txt
+          cat ${{env.PACKAGE_NAME}}/depends/common/gmp/gmp.txt
+
       - name: Create build directory
         run: |
           mkdir ${{env.PACKAGE_NAME}}/build
