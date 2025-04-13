@@ -33,3 +33,4 @@ jobs:
           cd zvbi-0.2.42
           CONFIGURE=1 ./autogen.sh
           make
+        shell: alpine.sh {0}
