@@ -59,6 +59,7 @@ jobs:
           cd ${{env.PACKAGE_NAME}}/build
           ls -al CMakeFiles
           ls -al CMakeFiles/inputstream.ffmpegdirect.dir
+          grep -r HAVE_SINCOS CMakeFiles/
           cat CMakeFiles/inputstream.ffmpegdirect.dir/flags.make
       
       - name: make
