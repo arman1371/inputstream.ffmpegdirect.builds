@@ -10,11 +10,14 @@ env:
 
 jobs:
   build:
+    strategy:
+      matrix:
+        arch: ['x86_64', 'x86', 'aarch64', 'armv7', 'armhf']
     runs-on: ubuntu-latest
     steps:
       - uses: jirutka/setup-alpine@v1
         with:
-          arch: armhf
+          arch: ${{ matrix.arch }}
           branch: v3.21
           packages: >
             build-base
