@@ -59,6 +59,8 @@ jobs:
       
       - name: make
         shell: alpine.sh {0}
+        env:
+          CMAKE_MESSAGE_LOG_LEVEL: WARNING
         run: |
           cd ${{env.PACKAGE_NAME}}/build
           make -j$(nproc)
