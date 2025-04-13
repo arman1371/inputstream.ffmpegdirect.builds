@@ -59,7 +59,7 @@ jobs:
         shell: alpine.sh {0}
         run: |
           cd ${{env.PACKAGE_NAME}}/build
-          make -j$(nproc)
+          make -j$(nproc) VERBOSE=1
       
       - name: Package artifacts
         uses: actions/upload-artifact@v4
