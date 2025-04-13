@@ -26,6 +26,7 @@ jobs:
             automake
             gettext-dev
             libtool
+            linux-headers
       
       - run: |
           wget https://github.com/zapping-vbi/zvbi/archive/refs/tags/v0.2.42.tar.gz
