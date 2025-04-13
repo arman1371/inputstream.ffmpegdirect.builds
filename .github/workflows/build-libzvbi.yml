@@ -27,6 +27,7 @@ jobs:
             gettext-dev
             libtool
             linux-headers
+            musl-dev
       
       - run: |
           wget https://github.com/zapping-vbi/zvbi/archive/refs/tags/v0.2.44.tar.gz
