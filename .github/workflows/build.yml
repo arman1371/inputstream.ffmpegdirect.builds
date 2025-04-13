@@ -30,6 +30,7 @@ jobs:
             gettext-dev
             libtool
             linux-headers
+            pkgconf
       
       - uses: actions/checkout@v4
         with:
