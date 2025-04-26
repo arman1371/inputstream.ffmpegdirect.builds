@@ -46,6 +46,7 @@ jobs:
           path: ${{env.PACKAGE_NAME}}
 
       - name: Fix gmp download url
+        # https://github.com/actions/runner-images/issues/7901
         run: |
           sed -i 's#https://gmplib.org/download/gmp/#https://ftp.gnu.org/gnu/gmp/#g' ${{env.PACKAGE_NAME}}/depends/common/gmp/gmp.txt
           cat ${{env.PACKAGE_NAME}}/depends/common/gmp/gmp.txt
