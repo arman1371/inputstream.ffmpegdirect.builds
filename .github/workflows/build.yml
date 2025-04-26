@@ -51,13 +51,6 @@ jobs:
           sed -i 's#https://gmplib.org/download/gmp/#https://ftp.gnu.org/gnu/gmp/#g' ${{env.PACKAGE_NAME}}/depends/common/gmp/gmp.txt
           cat ${{env.PACKAGE_NAME}}/depends/common/gmp/gmp.txt
 
-      - name: Fix va_copy in libzvbi
-        # Fix __va_copy error
-        run: |
-          sed -i 's#v0.2.42#v0.2.44#g' ${{env.PACKAGE_NAME}}/depends/common/libzvbi/libzvbi.txt
-          echo "bca620ab670328ad732d161e4ce8d9d9fc832533cb7440e98c50e112b805ac5e" > ${{env.PACKAGE_NAME}}/depends/common/libzvbi/libzvbi.sha256
-          cat ${{env.PACKAGE_NAME}}/depends/common/libzvbi/libzvbi.txt
-
       - name: Create build directory
         run: |
           mkdir ${{env.PACKAGE_NAME}}/build
