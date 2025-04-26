@@ -65,7 +65,7 @@ jobs:
         shell: alpine.sh {0}
         run: |
           cd ${{env.PACKAGE_NAME}}/build
-          make -j$(nproc)
+          make
       
       - name: Package artifacts
         uses: actions/upload-artifact@v4
