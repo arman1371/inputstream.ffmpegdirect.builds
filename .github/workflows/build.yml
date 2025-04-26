@@ -32,7 +32,6 @@ jobs:
             linux-headers
             pkgconf
             nasm
-            musl-dev
       
       - uses: actions/checkout@v4
         with:
